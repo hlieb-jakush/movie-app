@@ -1,0 +1,131 @@
+@import '../../app.scss';
+
+.header {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    max-height: 80px;
+    margin-bottom: $spacing * 4;
+    color: white;
+    background-color: $color1;
+    @include containerShadow;
+
+    &__main {
+        color: inherit;
+        display: flex;
+        align-items: center;
+        z-index: 3; 
+    }
+
+    &__icon {
+        height: 2rem;
+        margin-right: $spacing * 2;
+    }
+
+    &__title {
+        display: inline-block;
+        margin-right: $spacing * 4;
+        font-size: 1.5rem;
+        text-transform: none;
+
+        @media screen and (min-width: $sm) { 
+            display: inline-block;
+        }
+    }
+
+    &__nav { 
+        display: none; 
+        
+        &_open {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: lighten($color1 , 15%);
+            z-index: 2;
+            animation: 0.4s ease-in-out scrollAnimation;
+
+            @keyframes scrollAnimation {
+                from {
+                    top: -100%;
+                }
+
+                to {
+                    top: 0;
+                }
+            }
+
+            button:not(:last-of-type) {
+                margin-bottom: $spacing * 4;
+            }
+        }
+
+        @media screen and (min-width: $sm) { 
+            display: flex;
+            flex-direction: row;
+            position: initial;
+            width: initial;
+            height: initial;
+            background-color: initial;
+
+            button:not(:last-of-type) {
+                margin-right: $spacing;
+            }
+
+        }
+    }
+
+    &__burger {
+        display: inline-block;
+        position: relative;   
+        z-index: 5; 
+
+        &, &::before, &::after {
+            width: 40px;
+            height: 2px;
+            background-color: white;
+            transition: all 0.2s ease-in-out;  
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+        }
+
+        &_open {
+            background-color: transparent;
+            
+            &::before {
+                top: 0;
+                transform: rotate(45deg);
+            }
+    
+            &::after {
+                bottom: 0;
+                transform: rotate(-45deg);
+            }
+        }
+
+        @media screen and (min-width: $sm) { 
+            display: none;
+        }
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

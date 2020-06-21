@@ -1,0 +1,28 @@
+@import '../../app.scss';
+
+.button {
+    display: flex;
+    align-items: center;
+    padding: $spacing * 2 $spacing * 4;
+    border: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border-radius: 3px;
+    background-color: $color1;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: darken($color1, 10%);
+    }
+
+    &:focus {
+        background-color: darken($color1, 10%);
+    }
+    
+    &:active {
+        background-color: lighten($color1, 10%);
+    }
+}

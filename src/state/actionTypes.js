@@ -1,0 +1,5 @@
+export const SET_TITLE = 'SET_TITLE'
+export const SET_TYPE = 'SET_TYPE'
+export const SET_PAGE = 'SET_PAGE'
+export const SET_LIST = 'SET_LIST'
+export const ADD_LIST = 'ADD_LIST'

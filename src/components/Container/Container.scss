@@ -1,0 +1,9 @@
+@import '../../app.scss';
+
+.container {
+    flex-grow: 1;
+    width: 100%;
+    padding: $spacing * 4;
+    margin: 0 auto;
+    @include containerMedia($lg, 1280px);
+}

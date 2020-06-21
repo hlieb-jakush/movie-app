@@ -1,0 +1,56 @@
+@import '../../app.scss';
+
+.slider {
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.5s ease-in-out;
+    transition-delay: 0.5s;
+
+    &_hidden {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &__block {
+        position: relative;
+    }
+
+    &__carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        padding: $spacing * 2;
+        overflow-x: auto;
+    }
+
+    &__button {
+        position: absolute;
+        top: 50%;
+        z-index: 5;
+        opacity: 0.4;
+
+        &:first-of-type {
+            left: $spacing * 2;
+        }
+
+        &:last-of-type {
+            right: $spacing * 2;
+        }
+
+        &:hover {
+            opacity: 0.9;
+        }
+
+        &:focus {
+            opacity: 0.9;
+        }
+        
+        &:active {
+            opacity: 0.9;
+        }
+    }
+
+    .container {
+        height: 100%;
+        overflow: hidden;
+    }
+}
