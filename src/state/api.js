@@ -3,7 +3,7 @@ import Axios from "axios"
 const key = 'dfdae3d4'
 
 const instance = Axios.create({
-    baseURL: `http://www.omdbapi.com/`
+    baseURL: `https://www.omdbapi.com/`
 })
 
 export const API = {
