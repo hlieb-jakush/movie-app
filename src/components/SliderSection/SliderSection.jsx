@@ -10,36 +10,18 @@ const SliderSection = ({ title, type, page, list, setPage, addList }) => {
 
     const slider = useRef(null)
 
-    const wheelFunction = (e) => {
-        e.preventDefault()
-        const sliderBlock = slider.current
-        let isReverse = false
-        if (e.wheelDelta > 0) isReverse = true
-        scrollFunction(sliderBlock, sliderBlock.clientWidth, isReverse)
-    }
-
     const buttonFunction = (e) => {
         const sliderBlock = slider.current
-        let isReverse = false
-        if (e.currentTarget.getAttribute('id') === 'prev') isReverse = true
-        scrollFunction(sliderBlock, sliderBlock.clientWidth, isReverse)
+        let scrollSize = sliderBlock.clientWidth
+        if (e.currentTarget.getAttribute('id') === 'prev') scrollSize = -scrollSize
+        sliderBlock.scrollBy({ left: scrollSize, top: 0, behavior: "smooth" })
     }
 
-    const scrollFunction = (slider, scrollSize, isReverse) => {
-        if (isReverse) scrollSize = -scrollSize
-        slider.scrollBy({ left: scrollSize, top: 0, behavior: "smooth" })
-        if (slider.scrollWidth - (slider.scrollLeft + slider.clientWidth) <= scrollSize) {
+    const scrollFunction = () => {
+        if (slider.current.scrollWidth - (slider.current.scrollLeft + slider.current.clientWidth) === 0) {
             setPage(page + 1)
         }
     }
-
-    useEffect(() => {
-        const sliderBlock = slider.current
-        sliderBlock.addEventListener('wheel', wheelFunction, { passive: false })
-        return () => {
-            sliderBlock.removeEventListener('wheel', wheelFunction)
-        }
-    }, [title, type, page])
 
     useEffect(() => {
         const sliderBlock = slider.current
@@ -64,7 +46,7 @@ const SliderSection = ({ title, type, page, list, setPage, addList }) => {
                             <img className='header__icon' src={right} alt='logo' />
                         </Button>
                     </div>
-                    <div className="slider__carousel" ref={slider}>
+                    <div className="slider__carousel" ref={slider} onScroll={scrollFunction}>
                         {list && list.map(item => <ItemCard title={item.Title} poster={item.Poster} year={item.Year} key={`${item.Title}-${item.Year}`} />)}
                     </div>
                 </div>
