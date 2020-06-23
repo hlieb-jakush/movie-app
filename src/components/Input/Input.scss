@@ -10,4 +10,20 @@
     color: $color1;   
     transition: all 0.2s ease-in-out;
     cursor: inherit;
+
+    &[type=search] {
+        &::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            height: 30px;
+            width: 30px;
+            background-color: white;
+            background-image: url(../../assets/icons/clear.svg); 
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: all 0.2s ease-in-out;
+            cursor: pointer;
+        }
+    }
 }
