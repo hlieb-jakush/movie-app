@@ -20,7 +20,7 @@ const SearchSection = ({ title, type, list, setTitle, setType, setPage, getList 
     }
 
     useEffect(() => {
-        getList(title, type)
+        if (title) getList(title, type)
     }, [title, type, getList]);
 
     return (
