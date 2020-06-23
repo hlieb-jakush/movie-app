@@ -78,6 +78,10 @@
             height: initial;
             background-color: initial;
 
+            button {
+                opacity: 1;
+            }
+
             button:not(:last-of-type) {
                 margin: 0 $spacing 0 0;
             }

@@ -9,6 +9,10 @@
     &_hidden {
         visibility: hidden;
         opacity: 0;
+
+        button {
+            display: none;
+        }
     }
 
     &__block {
