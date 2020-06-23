@@ -27,7 +27,6 @@
     .select {
         padding: $spacing * 2 $spacing * 5;
         border: 2px solid $color1;       
-        border: 2px solid $color1;
         border-left: none;
         border-right: none;
         font-size: 1rem;
@@ -37,6 +36,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        background-color: white;
         background-image: url(../../assets/icons/settings.svg); 
         background-position: 95% 50%;
         background-repeat: no-repeat;
