@@ -27,7 +27,7 @@ const SearchSection = ({ title, type, list, setTitle, setType, setPage, getList 
         <section className='search'>
             <Container>
                 <div className={`search__block ${!list ? 'search__block_middle' : ''}`}>
-                    <Input title={localTitle} onChange={setlLocalTitle} />
+                    <Input title={localTitle} type='search' onChange={setlLocalTitle} />
                     <select className='select' defaultValue={localType} onChange={onSetlLocalType}>
                         <option value='movie'>Movie</option>
                         <option value='series'>Series</option>
