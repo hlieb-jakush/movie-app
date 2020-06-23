@@ -24,8 +24,9 @@
 
     &__button {
         position: absolute;
-        top: 50%;
-        z-index: 5;
+        top: 45%;
+        z-index: 1;
+        visibility: hidden;
         opacity: 0.4;
 
         &:first-of-type {
@@ -46,6 +47,10 @@
         
         &:active {
             opacity: 0.9;
+        }
+
+        @media screen and (min-width: $sm) { 
+            visibility: visible;
         }
     }
 
