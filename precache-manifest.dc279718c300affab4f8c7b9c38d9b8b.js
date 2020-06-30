@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a9f72d4269a5fd94c476a5fb2d5568f8",
+    "revision": "3ab58b62a5f2e80f573e6beaa94d146c",
     "url": "/movie-app/index.html"
   },
   {
-    "revision": "fe88cbd03258c5a7abd0",
-    "url": "/movie-app/static/css/main.bddcf147.chunk.css"
+    "revision": "c18ddb277d26bee2ce7a",
+    "url": "/movie-app/static/css/main.4d217897.chunk.css"
   },
   {
-    "revision": "56aac0a68d87626d1891",
-    "url": "/movie-app/static/js/2.26608836.chunk.js"
+    "revision": "b9972b836caf8fd9cb0f",
+    "url": "/movie-app/static/js/2.e1f2fe35.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/movie-app/static/js/2.26608836.chunk.js.LICENSE.txt"
+    "url": "/movie-app/static/js/2.e1f2fe35.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fe88cbd03258c5a7abd0",
-    "url": "/movie-app/static/js/main.ecb59cce.chunk.js"
+    "revision": "c18ddb277d26bee2ce7a",
+    "url": "/movie-app/static/js/main.ba5ebe8b.chunk.js"
   },
   {
     "revision": "255bee9b5e55438d0d88",
@@ -32,8 +32,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/movie-app/static/media/clear.3b87ecca.svg"
   },
   {
+    "revision": "9f965a85255baac8b9f192f321ae150c",
+    "url": "/movie-app/static/media/face.9f965a85.svg"
+  },
+  {
+    "revision": "dd742d747b20d60de76dadc023e42c57",
+    "url": "/movie-app/static/media/history.dd742d74.svg"
+  },
+  {
     "revision": "1caaef75e605ef2dc6d1a59b72791a09",
     "url": "/movie-app/static/media/left.1caaef75.svg"
+  },
+  {
+    "revision": "654fd08234d70eb82ac16bfbb84bf0cf",
+    "url": "/movie-app/static/media/list.654fd082.svg"
   },
   {
     "revision": "1ae09dda7bf73c582f262b80bad5be09",
@@ -46,5 +58,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "95816c751f0ddacce257e9688354e61f",
     "url": "/movie-app/static/media/settings.95816c75.svg"
+  },
+  {
+    "revision": "5b0cc761aba89875acc266bd54e1025b",
+    "url": "/movie-app/static/media/settings_white.5b0cc761.svg"
   }
 ]);
