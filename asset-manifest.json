@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/movie-app/static/css/main.eac5cbc4.chunk.css",
-    "main.js": "/movie-app/static/js/main.7f5d8f7e.chunk.js",
-    "main.js.map": "/movie-app/static/js/main.7f5d8f7e.chunk.js.map",
+    "main.css": "/movie-app/static/css/main.a5c1c0d6.chunk.css",
+    "main.js": "/movie-app/static/js/main.88459aa3.chunk.js",
+    "main.js.map": "/movie-app/static/js/main.88459aa3.chunk.js.map",
     "runtime-main.js": "/movie-app/static/js/runtime-main.4f650522.js",
     "runtime-main.js.map": "/movie-app/static/js/runtime-main.4f650522.js.map",
-    "static/js/2.ff42c4ac.chunk.js": "/movie-app/static/js/2.ff42c4ac.chunk.js",
-    "static/js/2.ff42c4ac.chunk.js.map": "/movie-app/static/js/2.ff42c4ac.chunk.js.map",
+    "static/js/2.b4533a4e.chunk.js": "/movie-app/static/js/2.b4533a4e.chunk.js",
+    "static/js/2.b4533a4e.chunk.js.map": "/movie-app/static/js/2.b4533a4e.chunk.js.map",
     "index.html": "/movie-app/index.html",
-    "precache-manifest.a8fa8f725b9c8b94eaeb69a889a8729d.js": "/movie-app/precache-manifest.a8fa8f725b9c8b94eaeb69a889a8729d.js",
+    "precache-manifest.43d928d07a210f1e444e52ac292b34fb.js": "/movie-app/precache-manifest.43d928d07a210f1e444e52ac292b34fb.js",
     "service-worker.js": "/movie-app/service-worker.js",
-    "static/css/main.eac5cbc4.chunk.css.map": "/movie-app/static/css/main.eac5cbc4.chunk.css.map",
-    "static/js/2.ff42c4ac.chunk.js.LICENSE.txt": "/movie-app/static/js/2.ff42c4ac.chunk.js.LICENSE.txt",
+    "static/css/main.a5c1c0d6.chunk.css.map": "/movie-app/static/css/main.a5c1c0d6.chunk.css.map",
+    "static/js/2.b4533a4e.chunk.js.LICENSE.txt": "/movie-app/static/js/2.b4533a4e.chunk.js.LICENSE.txt",
     "static/media/calendar.svg": "/movie-app/static/media/calendar.17b75e4d.svg",
     "static/media/Input.scss": "/movie-app/static/media/clear.3b87ecca.svg",
     "static/media/face.svg": "/movie-app/static/media/face.9f965a85.svg",
-    "static/media/favorite.svg": "/movie-app/static/media/favorite.e246b4e3.svg",
+    "static/media/favorite_fill.svg": "/movie-app/static/media/favorite_fill.e246b4e3.svg",
+    "static/media/favorite_outline.svg": "/movie-app/static/media/favorite_outline.bd6008c7.svg",
     "static/media/history.svg": "/movie-app/static/media/history.dd742d74.svg",
     "static/media/left.svg": "/movie-app/static/media/left.1caaef75.svg",
     "static/media/list.svg": "/movie-app/static/media/list.654fd082.svg",
@@ -26,8 +27,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.4f650522.js",
-    "static/js/2.ff42c4ac.chunk.js",
-    "static/css/main.eac5cbc4.chunk.css",
-    "static/js/main.7f5d8f7e.chunk.js"
+    "static/js/2.b4533a4e.chunk.js",
+    "static/css/main.a5c1c0d6.chunk.css",
+    "static/js/main.88459aa3.chunk.js"
   ]
 }
