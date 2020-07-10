@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
+import { NavLink, Link } from 'react-router-dom'
 import Container from '../Container/Container'
-import Button from '../Button/Button'
 import './Header.scss'
 
 const Header = ({ icon, title }) => {
@@ -15,15 +15,17 @@ const Header = ({ icon, title }) => {
     return (
         <header className='header'>
             <Container>
-                <a href='https://yakushgleb.github.io/movie-app/' className='header__main'>
-                    <Button>
-                        {icon && <img className='header__icon' src={icon} alt='logo' />}
-                        {title && <span className='header__title'>{title}</span>}
-                    </Button>
-                </a>
+                <Link to='/' className='button button_large header__main' onClick={closeleMenu}>
+                    <img src={icon} alt='logo' />
+                    <span>{title}</span>
+                </Link>
                 <nav className='header__nav' ref={nav}>
-                    <Button>My List</Button>
-                    <Button>Search</Button>
+                    <NavLink exact to='/' className='button' activeClassName='button_selected' onClick={closeleMenu}>
+                        Search
+                    </NavLink>
+                    <NavLink to='/profile' className='button' activeClassName='button_selected' onClick={closeleMenu}>
+                        Profile
+                    </NavLink>
                 </nav>
                 <span className='header__burger' onClick={openMenu} />
             </Container>
