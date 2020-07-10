@@ -6,10 +6,16 @@ import './Header.scss'
 const Header = ({ icon, title }) => {
 
     const nav = useRef(null)
+    const burger = useRef(null)
 
-    const openMenu = (e) => {
-        e.currentTarget.classList.toggle('header__burger_open')
+    const toggleMenu = () => {
+        burger.current.classList.toggle('header__burger_open')
         nav.current.classList.toggle('header__nav_open')
+    }
+
+    const closeleMenu = () => {
+        burger.current.classList.remove('header__burger_open')
+        nav.current.classList.remove('header__nav_open')
     }
 
     return (
@@ -27,7 +33,7 @@ const Header = ({ icon, title }) => {
                         Profile
                     </NavLink>
                 </nav>
-                <span className='header__burger' onClick={openMenu} />
+                <span className='header__burger' ref={burger} onClick={toggleMenu} />
             </Container>
         </header>
     )
