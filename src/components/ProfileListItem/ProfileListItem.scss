@@ -1,0 +1,35 @@
+@import '../../app.scss';
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    min-height: $spacing * 10;
+    padding: 0 $spacing;
+    margin-bottom: $spacing * 2;
+    text-align: start;
+    border-radius: $spacing;
+    transition: all 0.2s ease-in-out;
+
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+
+    &__poster {
+        width: $spacing * 10;
+        height: $spacing * 10;
+        object-fit: cover;
+        border-radius: $spacing;
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        padding: 0 $spacing * 2;
+    }
+
+    &:hover {
+        background-color: $color2;
+    }
+}
