@@ -3,26 +3,88 @@
 .button {
     display: flex;
     align-items: center;
-    padding: $spacing * 2 $spacing * 4;
-    border: none;
-    font-size: 1rem;
-    text-transform: uppercase;
-    box-sizing: border-box;
-    border-radius: 3px;
-    background-color: $color1;
+    padding: $spacing * 1.5 $spacing * 2.5;
     color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border-radius: $spacing;
+    border: 1px solid transparent;
+    background-color: $color1;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
 
     &:hover {
+        border-color: darken($color1, 10%);
         background-color: darken($color1, 10%);
     }
 
     &:focus {
+        border-color: darken($color1, 10%);
         background-color: darken($color1, 10%);
+        box-shadow: 0 0 0 0.2rem lighten($color1, 30%);
     }
     
     &:active {
-        background-color: lighten($color1, 10%);
+        border-color: lighten($color1, 10%);
+        box-shadow: 0 0 0 0.2rem lighten($color1, 30%);
+    }
+
+    &_outlined {
+        color: $color1;
+        border-color: $color1;
+        background-color: transparent;
+
+        &:hover {
+            color: white;
+            background-color: $color1;
+        }
+    
+        &:focus {
+            color: white;
+            background-color: $color1;
+        }
+        
+        &:active {
+            color: white;
+        }
+       
+    }
+
+    &_medium {
+        
+        img {
+            height: 1.5rem;
+            margin-right: $spacing * 2;
+        }
+    
+        span {
+            display: inline-block;
+            font-size: 1.2rem;
+            text-transform: none;
+        }
+    }
+
+    &_large {
+
+        img {
+            height: 2rem;
+            margin-right: $spacing * 2;
+        }
+    
+        span {
+            display: inline-block;
+            font-size: 1.5rem;
+            text-transform: none;
+        }
+    }
+
+    &_selected {
+        border-color: darken($color1, 10%);
+        background-color: darken($color1, 10%);
     }
 }

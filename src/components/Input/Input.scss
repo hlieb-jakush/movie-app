@@ -2,14 +2,23 @@
 
 .input {
     flex-shrink: 1;
-    padding: $spacing * 2 $spacing * 4;
-    border-radius: 3px;
-    border: 2px solid $color1;
+    padding: $spacing * 1.5 $spacing * 2.5;
+    color: $color1;  
     font-size: 1rem;
-    text-transform: uppercase;
-    color: $color1;   
+    line-height: 1.5;
+    border-radius: $spacing;
+    border: 1px solid $color1;
+    background-color: transparent;
     transition: all 0.2s ease-in-out;
     cursor: inherit;
+
+    &:focus {
+        box-shadow: 0 0 0 0.2rem lighten($color1, 30%);
+    }
+    
+    &:active {
+        box-shadow: 0 0 0 0.2rem lighten($color1, 30%);
+    }
 
     &[type=search] {
         &::-webkit-search-cancel-button {

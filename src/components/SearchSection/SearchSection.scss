@@ -22,16 +22,19 @@
         min-width: 100px;
         border-right: none;
         border-radius: 15px 0 0 15px;
+
+        &:focus, &:active {
+            box-shadow: none;
+        }
     }
 
     .select {
         padding: $spacing * 2 $spacing * 5;
-        border: 2px solid $color1;       
+        border: 1px solid $color1;     
         border-left: none;
         border-right: none;
         font-size: 1rem;
         font-weight: normal;
-        text-transform: uppercase;
         color: lighten($color1, 40%); 
         -webkit-appearance: none;
         -moz-appearance: none;

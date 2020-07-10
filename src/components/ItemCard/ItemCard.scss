@@ -58,10 +58,27 @@
         margin-right: $spacing;       
     }
 
+    button {
+        position: absolute;
+        top: $spacing;
+        right: $spacing;
+        opacity: 0.9;
+
+        @media screen and (min-width: $sm) { 
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &:focus {
+            visibility: visible;
+            opacity: 0.9;
+        }
+    }
+
     &:hover, &:focus{
         transform: translateY(-10px);
 
-        .card__field {
+        .card__field, button {
             visibility: visible;
             opacity: 0.9;
         }

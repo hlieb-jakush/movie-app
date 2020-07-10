@@ -13,26 +13,7 @@
     @include containerShadow;
 
     &__main {
-        color: inherit;
-        display: flex;
-        align-items: center;
         z-index: 3; 
-    }
-
-    &__icon {
-        height: 2rem;
-        margin-right: $spacing * 2;
-    }
-
-    &__title {
-        display: inline-block;
-        margin-right: $spacing * 4;
-        font-size: 1.5rem;
-        text-transform: none;
-
-        @media screen and (min-width: $sm) { 
-            display: inline-block;
-        }
     }
 
     &__nav { 
@@ -47,15 +28,13 @@
         height: 100%; 
         z-index: 2;
         background-color: $color1;
-        //background-color: lightblue;
         transition: top 0.5s ease-in-out;
 
-        button {
+        .button {
             opacity: 0;
-            transition: opacity 0.25s ease-in-out;
         }
 
-        button:not(:last-of-type) {
+        a:not(:last-of-type) {
             margin: 0 0 $spacing * 4 0;
         }
         
@@ -64,7 +43,7 @@
             overflow: hidden;
             z-index: 1;
 
-            button {
+            .button {
                 opacity: 1;
                 transition: opacity 0.5s ease-in-out 0.25s;
             }
@@ -78,12 +57,12 @@
             height: initial;
             background-color: initial;
 
-            button {
+            .button {
                 opacity: 1;
             }
 
-            button:not(:last-of-type) {
-                margin: 0 $spacing 0 0;
+            a:not(:last-of-type) {
+                margin: 0 $spacing * 3 0 0;
             }
 
         }
