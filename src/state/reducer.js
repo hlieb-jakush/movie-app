@@ -1,57 +1,81 @@
-import { SET_TITLE, SET_TYPE, SET_PAGE, SET_LIST, ADD_LIST } from './actionTypes'
+import {
+    SET_SEARCH_TITLE, SET_SEARCH_TYPE, SET_SEARCH_PAGE,
+    SET_RESULT_LIST, ADD_RESULT_LIST,
+} from './actionTypes'
 
 const initialState = {
-    options: {
+    search: {
         title: '',
         type: 'movie',
         page: 1,
     },
-    data: {
+    result: {
         list: null
-
+    },
+    profile: {
+        name: 'User',
+        favorite: [],
+        history: []
     }
 }
 
 export const appReducer = (state = initialState, action) => {
     switch (action.type) {
-        case SET_TITLE:
+        case SET_SEARCH_TITLE:
             return {
                 ...state,
-                options: {
-                    ...state.options,
+                search: {
+                    ...state.search,
                     title: action.title
                 }
             }
 
-        case SET_TYPE:
+        case SET_SEARCH_TYPE:
             return {
                 ...state,
-                options: {
-                    ...state.options,
-                    type: action.searchType
+                search: {
+                    ...state.search,
+                    type: action.category
                 }
             }
 
 
-        case SET_PAGE:
+        case SET_SEARCH_PAGE:
             return {
                 ...state,
-                options: {
-                    ...state.options,
+                search: {
+                    ...state.search,
                     page: action.page
                 }
             }
 
-        case SET_LIST:
+        case SET_RESULT_LIST:
             return {
                 ...state,
-                data: {
-                    ...state.data,
+                result: {
+                    ...state.result,
                     list: action.list
                 }
             }
 
-        case ADD_LIST:
+        case ADD_RESULT_LIST:
+            return {
+                ...state,
+                result: {
+                    ...state.result,
+                    list: [...state.result.list, ...action.list]
+                }
+            }
+
+        case SET_PROFILE_NAME:
+            return {
+                ...state,
+                profile: {
+                    ...state.profile,
+                    name: action.name
+                }
+            }
+
             return {
                 ...state,
                 data: {
