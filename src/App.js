@@ -8,10 +8,21 @@ function App() {
   return (
     <>
       <Header icon={logo} title='Movie App' />
-      <SearchSectionContainer />
-      <SliderSectionContainer />
+      <Route exact path='/'>
+        <SearchSectionContainer />
+        <SliderSectionContainer />
+      </Route>
+      <Route path='/profile'>
+        <ProfileSectionContainer />
+      </Route>
     </>
   );
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  name: getProfileName(state),
+  favorite: getProfileFavorite(state),
+  history: getProfileHistory(state)
+})
+
+export default connect(mapStateToProps, { getProfileNameThunk, getFavoriteListThunk, setFavoriteListThunk, getHistoryListThunk, setHistoryListThunk })(App);
