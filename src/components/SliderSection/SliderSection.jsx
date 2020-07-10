@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import Container from '../Container/Container'
 import Button from '../Button/Button'
 import ItemCard from '../ItemCard/ItemCard'
@@ -6,9 +6,10 @@ import left from '../../assets/icons/left.svg'
 import right from '../../assets/icons/right.svg'
 import './SliderSection.scss'
 
-const SliderSection = ({ title, type, page, list, setPage, addList }) => {
+const SliderSection = ({ title, type, page, list, favorite, addResultListThunk, setSearchPage, addFavoriteItem, deleteFavoriteItem }) => {
 
     const slider = useRef(null)
+    const [loading, setLoading] = useState(false)
 
     const buttonFunction = (e) => {
         const sliderBlock = slider.current
@@ -17,9 +18,12 @@ const SliderSection = ({ title, type, page, list, setPage, addList }) => {
         sliderBlock.scrollBy({ left: scrollSize, top: 0, behavior: "smooth" })
     }
 
-    const scrollFunction = () => {
-        if (slider.current.scrollWidth - (slider.current.scrollLeft + slider.current.clientWidth) === 0) {
-            setPage(page + 1)
+    const scrollFunction = (e) => {
+        if (slider.current.scrollWidth - (slider.current.scrollLeft + slider.current.clientWidth) < slider.current.clientWidth && !loading) {
+            setLoading(true)
+            setSearchPage(page + 1)
+            addResultListThunk(title, type, page + 1)
+            setTimeout(() => setLoading(false), 3000)
         }
     }
 
@@ -27,10 +31,6 @@ const SliderSection = ({ title, type, page, list, setPage, addList }) => {
         const sliderBlock = slider.current
         sliderBlock.scrollTo({ left: 0, top: 0, behavior: "smooth" })
     }, [title, type])
-
-    useEffect(() => {
-        if (page > 1) addList(title, type, page)
-    }, [page])
 
     return (
         <section className={`slider ${!list ? 'slider_hidden' : ''}`}>
@@ -47,7 +47,18 @@ const SliderSection = ({ title, type, page, list, setPage, addList }) => {
                         </Button>
                     </div>
                     <div className="slider__carousel" ref={slider} onScroll={scrollFunction}>
-                        {list && list.map(item => <ItemCard title={item.Title} poster={item.Poster} year={item.Year} key={`${item.Title}-${item.Year}`} />)}
+                        {list && list.map(item => (
+                            <ItemCard
+                                title={item.Title}
+                                poster={item.Poster}
+                                year={item.Year}
+                                imdbID={item.imdbID}
+                                isLiked={favorite && favorite.find(profileItem => profileItem.imdbID === item.imdbID)}
+                                addFavoriteItem={addFavoriteItem}
+                                deleteFavoriteItem={deleteFavoriteItem}
+                                key={`${item.Title}-${item.Year}`} />
+                        )
+                        )}
                     </div>
                 </div>
             </Container>

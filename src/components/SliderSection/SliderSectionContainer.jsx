@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import SliderSection from './SliderSection'
-import { addList } from '../../state/thunks'
-import { setPage } from '../../state/actionCreators'
+import { addResultListThunk } from '../../state/thunks'
+import { setSearchPage, addFavoriteItem, deleteFavoriteItem } from '../../state/actionCreators'
 import { getSearchTitle, getSearchType, getSearchPage, getResultList, getProfileFavorite } from '../../state/selectors'
 
 const mapStateToProps = (state) => ({
@@ -12,4 +12,4 @@ const mapStateToProps = (state) => ({
     favorite: getProfileFavorite(state)
 })
 
-export default connect(mapStateToProps, { setPage, addList })(SliderSection)
+export default connect(mapStateToProps, { addResultListThunk, setSearchPage, addFavoriteItem, deleteFavoriteItem })(SliderSection)

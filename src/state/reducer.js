@@ -1,6 +1,9 @@
 import {
     SET_SEARCH_TITLE, SET_SEARCH_TYPE, SET_SEARCH_PAGE,
     SET_RESULT_LIST, ADD_RESULT_LIST,
+    SET_PROFILE_NAME,
+    SET_FAVORITE_LIST, ADD_FAVORITE_ITEM, DELETE_FAVORITE_ITEM,
+    SET_HISTORY_LIST, ADD_HISTORY_ITEM
 } from './actionTypes'
 
 const initialState = {
@@ -76,14 +79,50 @@ export const appReducer = (state = initialState, action) => {
                 }
             }
 
+        case SET_FAVORITE_LIST:
             return {
                 ...state,
-                data: {
-                    ...state.data,
-                    list: [...state.data.list, ...action.list]
+                profile: {
+                    ...state.profile,
+                    favorite: action.favorite
                 }
             }
 
+        case ADD_FAVORITE_ITEM:
+            return {
+                ...state,
+                profile: {
+                    ...state.profile,
+                    favorite: [...state.profile.favorite, action.favorite]
+                }
+            }
+
+        case DELETE_FAVORITE_ITEM:
+            return {
+                ...state,
+                profile: {
+                    ...state.profile,
+                    favorite: [...state.profile.favorite.filter(item => item.imdbID !== action.imdbID)]
+                }
+            }
+
+        case SET_HISTORY_LIST:
+            return {
+                ...state,
+                profile: {
+                    ...state.profile,
+                    history: action.history
+                }
+            }
+
+        case ADD_HISTORY_ITEM:
+            return {
+                ...state,
+                profile: {
+                    ...state.profile,
+                    history: [...state.profile.history, action.history]
+                }
+            }
 
         default:
             return state
