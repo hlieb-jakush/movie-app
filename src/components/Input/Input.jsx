@@ -1,14 +1,9 @@
 import React from 'react'
 import './Input.scss'
 
-const Input = ({ title, type, onChange }) => {
-
-    const onSetTitle = (e) => {
-        onChange(e.target.value)
-    }
-
+const Input = ({ value, type, onChange }) => {
     return (
-        <input className='input' type={type} value={title} onChange={onSetTitle} />
+        <input className='input' type={type} value={value} onChange={onChange} />
     )
 }
 
